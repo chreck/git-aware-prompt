@@ -5,7 +5,9 @@ amazing. Constantly switching branches can be confusing though as you have to
 run `git status` to see which branch you're currently on.
 
 The solution to this is to have your terminal prompt display the current
-branch. There's a [number][1] [of][2] [articles][3] [available][4] online
+branch and the dirty state of your working branch. The working branch is dirty 
+if files are not staged to a commit (character is a star) or stashed (character is a ^). 
+There's a [number][1] [of][2] [articles][3] [available][4] online
 about how to achieve this. This project is an attempt to make an easy to
 install/configure solution.
 
