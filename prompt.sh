@@ -18,6 +18,12 @@ find_git_dirty() {
   else
     git_dirty=''
   fi
+
+  # Based on https://gist.github.com/mcjim/1182950
+  local stash=$(git stash list 2> /dev/null | tail -n1);
+  if [[ "$stash" != "" ]] ; then
+    git_dirty=$git_dirty"^"
+  fi
 }
 
 PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
